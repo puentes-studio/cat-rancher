@@ -1,0 +1,38 @@
+
+
+.ReactModal__Overlay--after-open {
+    font-size: 15px;
+    position: fixed;
+    inset: 0px;
+    height: 300px;
+    color: #131312;
+    display: flex;
+    margin-top: 197px
+}
+
+.ReactModal__Content {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert-message {
+    color: rgb(192, 2, 2);
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.close-alert-button {
+    border-radius: 50px;
+    background-color: red;
+    width: 188px;
+    margin: 0 auto;
+}

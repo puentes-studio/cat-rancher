@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import catData from "../../cats/catData";
 import "./Cats.css";
 
@@ -20,6 +21,7 @@ function Cats() {
   const checkClowder = () => {
     if (selectedCats.length !== 3) {
       alert("Please select 3 cats to form a clowder.");
+
       return;
     }
 
