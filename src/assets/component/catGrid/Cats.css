@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .cats-container {
@@ -30,6 +31,7 @@
   gap: 10px;
   list-style: none;
   border-radius: 20px;
+  min-height: 200px;
 }
 
 .cat-container {
@@ -93,11 +95,22 @@
 }
 
 button {
-  background-color: blue;
   padding: 10px 20px;
   margin: 0 20px;
   border: none;
   border-radius: 50px;
   color: white;
   font-weight: 500;
+}
+
+.check-button {
+  background-color: blue;
+}
+
+.reset-button {
+  background-color: rgb(79, 79, 79);
+}
+
+button:hover {
+  background-color: black;
 }

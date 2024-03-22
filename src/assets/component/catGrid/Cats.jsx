@@ -73,13 +73,18 @@ function Cats() {
 
   const resetSelection = () => {
     setSelectedCats([]);
+    setClowder([]);
   };
 
   return (
     <div>
       <h1>Cat Clowder Selection</h1>
-      <button onClick={checkClowder}>Check Clowder</button>
-      <button onClick={resetSelection}>Reset Selection</button>
+      <button className="check-button" onClick={checkClowder}>
+        Check Clowder
+      </button>
+      <button className="reset-button" onClick={resetSelection}>
+        Reset Selection
+      </button>
       <div className="container">
         <ul className="cats-container">
           {catData.map((cat) => (
