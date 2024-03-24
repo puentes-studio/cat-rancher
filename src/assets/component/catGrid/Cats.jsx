@@ -1,11 +1,13 @@
 import { useState } from "react";
-
+import AlertModal from "../alerts/Alert";
 import catData from "../../cats/catData";
 import "./Cats.css";
 
 function Cats() {
   const [selectedCats, setSelectedCats] = useState([]);
   const [clowder, setClowder] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const toggleSelect = (catId) => {
     setSelectedCats((prevSelectedCats) => {
@@ -19,11 +21,12 @@ function Cats() {
   console.log(selectedCats);
 
   const checkClowder = () => {
-    if (selectedCats.length !== 3) {
-      alert("Please select 3 cats to form a clowder.");
-
+    if (selectedCats.length < 3) {
+      setAlertMessage("Please select 3 cats to form a clowder.");
+      setIsOpen(true);
       return;
     }
+    console.log("Please select 3 cats to form a clowder.");
 
     const catCodes = selectedCats.map((catId) => {
       const cat = catData.find((c) => c.id === catId);
@@ -32,9 +35,11 @@ function Cats() {
 
     if (isValidClowder(catCodes)) {
       setClowder(selectedCats); // Update clowder state with selected cats
-      alert("Valid clowder!");
+      setAlertMessage("Valid clowder!");
+      setIsOpen(true);
     } else {
-      alert("Invalid clowder. Please select cats that get along.");
+      setAlertMessage("Invalid clowder. Please select cats that get along.");
+      setIsOpen(true);
     }
   };
 
@@ -76,6 +81,10 @@ function Cats() {
   const resetSelection = () => {
     setSelectedCats([]);
     setClowder([]);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -130,6 +139,7 @@ function Cats() {
           </div>
         </div>
       </div>
+      <AlertModal isOpen={isOpen} message={alertMessage} onClose={closeModal} />
     </div>
   );
 }
