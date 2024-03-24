@@ -21,7 +21,7 @@ function Cats() {
   console.log(selectedCats);
 
   const checkClowder = () => {
-    if (selectedCats.length < 3) {
+    if (selectedCats.length !== 3) {
       setAlertMessage("Please select 3 cats to form a clowder.");
       setIsOpen(true);
       return;
@@ -34,7 +34,7 @@ function Cats() {
     });
 
     if (isValidClowder(catCodes)) {
-      setClowder(selectedCats); // Update clowder state with selected cats
+      setClowder(selectedCats);
       setAlertMessage("Valid clowder!");
       setIsOpen(true);
     } else {
@@ -42,7 +42,6 @@ function Cats() {
       setIsOpen(true);
     }
   };
-
   const isValidClowder = (catCodes) => {
     // Three tall cats will get along; a tall, a short, and a round cat will get along; but if you put two tall cats and one short cat in clowder, there will be cat fights.
     const tallCats = catCodes.filter((code) => code[0] === "3").length;
@@ -50,18 +49,18 @@ function Cats() {
     const roundCats = catCodes.filter((code) => code[2] === "r").length;
 
     if (
-      tallCats === 3 ||
-      (tallCats === 1 && shortCats === 1 && roundCats === 1)
+      tallCats === 3 || // Three tall cats will get along
+      (tallCats === 1 && shortCats === 1 && roundCats === 1) // One tall, one short, and one round cat will get along but not all combinations...
     ) {
-      return true; // Three tall cats will get along - a tall, a short, and a round cat will get along;
+      return true;
     }
 
-    // Verificar regla para evitar peleas entre los gatos
+    // Two tall cats and one short cat will fight
     if (tallCats === 2 && shortCats === 1) {
-      return false; // two tall cats and one short cat will fight
+      return false;
     }
 
-    // check each attribute
+    // Check each attribute
     const attributes = ["stripes", "color", "shape", "eyes"];
     for (let i = 0; i < attributes.length; i++) {
       const attributeValues = catCodes.map((code) => code[i]);
@@ -89,7 +88,13 @@ function Cats() {
 
   return (
     <div>
-      <h1>Cat Clowder Selection</h1>
+      <h1 className="cat-title">Cat Clowder Selection</h1>
+      <p className="cat-description">
+        Hello! please select 3 cats to form a clowder, you can select and
+        unselect a cat. <br />
+        Once selected a clowder (a group of 3 cats), we will check if you made a
+        valid clowder.
+      </p>
       <button className="check-button" onClick={checkClowder}>
         Check Clowder
       </button>

@@ -4,14 +4,27 @@
   gap: 20px;
 }
 
+.cat-title {
+  font-size: 30px;
+  margin: 15px 15%;
+}
+
+.cat-description {
+  font-size: 15px;
+  margin: 15px 15%;
+  line-height: 17px;
+}
+
 .cats-container {
   height: auto;
+  background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   list-style: none;
-  border-radius: 20px;
+  border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
 }
 
 .result-container {
@@ -21,17 +34,19 @@
   gap: 10px;
   list-style: none;
   border-radius: 20px;
+
+  padding: 0;
 }
 
 .clouders-found {
-  background-color: rgb(206, 206, 206);
+  background-color: rgb(255, 255, 255);
   height: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
   list-style: none;
   border-radius: 20px;
   min-height: 200px;
+  border: 3px solid rgb(0, 200, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cat-container {
@@ -55,10 +70,9 @@
 
 .cat-info {
   z-index: 1;
-  margin-top: 50%;
+  margin-top: 50px;
   position: absolute;
   display: none;
-  height: 50%;
   background-color: rgb(255 253 253 / 80%);
   color: #343434;
   box-sizing: border-box;
@@ -70,10 +84,9 @@
   opacity: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 30pxpx;
-  padding-bottom: 30px;
+  justify-content: center;
+  padding: 10px;
 }
 
 .selected::before {
@@ -83,15 +96,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(3, 249, 52, 0.5);
   z-index: 1;
   border-radius: 50px;
-}
-
-.logo-client {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 button {

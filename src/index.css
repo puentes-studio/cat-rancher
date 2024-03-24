@@ -2,4 +2,11 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  background: rgb(213, 213, 213);
+  background: linear-gradient(
+    172deg,
+    rgba(213, 213, 213, 1) 0%,
+    rgba(247, 243, 250, 1) 15%,
+    rgba(177, 176, 179, 1) 100%
+  );
 }

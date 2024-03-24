@@ -1,7 +1,7 @@
+import PropTypes from "prop-types";
 import Modal from "react-modal";
 import "./Alert.css";
 
-// Set app element for accessibility
 Modal.setAppElement("#root");
 
 const AlertModal = ({ isOpen, message, onClose }) => {
@@ -15,6 +15,12 @@ const AlertModal = ({ isOpen, message, onClose }) => {
       </div>
     </Modal>
   );
+};
+
+AlertModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default AlertModal;
