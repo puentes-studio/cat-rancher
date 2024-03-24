@@ -1,4 +1,17 @@
-This project is the record of a job test.
+<< To run the program >>
+
+Go to the folder "CatRancher-test" and install all dependencies with the following command: npm i
+Then run the following command to initialize the application: npm run dev
+
+cd "CatRancher-test"
+npm install
+npm run dev
+
+---
+
+---
+
+---
 
 The Catrancher
 
